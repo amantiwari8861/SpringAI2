@@ -1,10 +1,7 @@
 package com.training.controller;
 
-import com.training.config.AiConfig;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.function.Function;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:5173")
@@ -23,12 +20,14 @@ public class ChatController {
     }
 
     @PostMapping("/chat")
-    public ChatApiResponse ask(@RequestBody RequestPayload requestPayload, Function<AiConfig.SearchRequest, AiConfig.SearchResponse> webSearch) {
-        String message= chatClient.prompt()
+    public ChatApiResponse ask(@RequestBody RequestPayload requestPayload) {
+        System.out.println(requestPayload.toString());
+
+        String message = chatClient.prompt()
                 .user(requestPayload.message())
-                .tools(webSearch)
                 .call()
                 .content();
+
         return new ChatApiResponse(true, message);
     }
 }
