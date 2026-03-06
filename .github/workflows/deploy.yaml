@@ -41,7 +41,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           source: "my-app.tar"
-          target: "/home/ubuntu"
+          target: "/home/ec2-user"
 
 
       - name: Deploy Container
