@@ -34,4 +34,4 @@ build/
 
 *.properties
 
-SpringAiKey.pem
+*.pem
