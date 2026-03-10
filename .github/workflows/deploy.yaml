@@ -60,4 +60,6 @@ jobs:
             docker run -d \
               -p 8080:8080 \
               --name my-app \
+              -e SERP_API_KEY \
+              -e OPENAI_API_KEY \
               my-app
