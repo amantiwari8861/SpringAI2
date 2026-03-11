@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.util.Base64;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("api/v1")
 public class ChatController {
 
